@@ -44,6 +44,14 @@ then
    exit 1
 fi
 
+# existing user check
+if id -u $USER &>/dev/null
+then
+   echo account named $USER already exists
+   exit 1
+fi
+
+
 echo creating ftp user with login $USER ftpmanager addresses $EMAILADDR and wonderdesk ref $WDJOB
 
 /usr/sbin/adduser --quiet \
