@@ -77,7 +77,7 @@ managedaccounts = {}
 def validemails(emaillist):
    for manageremail in emaillist:
       # check validity of emails 
-      if not re.match("^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", manageremail):
+      if not re.match("^[A-Za-z0-9'\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", manageremail):
          print "regex didnt match ",manageremail, " deemed not a valid email address, not handling this account"
          return False
    return True
